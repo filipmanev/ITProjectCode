@@ -1,0 +1,8 @@
+
+(The sampled text is NEGATIVE! -0.8979) fuck  shit  bitch 
+(The sampled text is NEGATIVE! -0.6115) fucking 
+The sampled text is POSITIVE! 0.6697
+(The sampled text is NEGATIVE! -0.6115) fucking 
+The sampled text is POSITIVE! 0.6697
+(The sampled text is NEGATIVE! -0.6115) fucking 
+The sampled text is POSITIVE! 0.6697
