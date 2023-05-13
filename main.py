@@ -13,6 +13,8 @@ from tkinter.messagebox import showinfo
 from tkinter.filedialog import  askopenfilename
 from tkinter import messagebox as mb
 from tkinter import *
+import os
+import sys
 root = tk.Tk()
 root.title('Profanity Scanner')
 root.resizable(False, False)
@@ -104,7 +106,17 @@ def mainFunction(SampleText):
 def select_file():
 
     filename1 = askopenfilename()
+
+    file_path = filename1
+    def is_valid_file(file_path):
+        file_name, file_ext = os.path.splitext(file_path)
+        return file_ext.lower() == '.txt'
+
+
     print('Selected: ', filename1)
+
+    if not is_valid_file(file_path):
+        mb.showerror("Result", "This is not a .txt file, please select correct file type")
 
     with open(filename1, 'r') as file:
         file_contents = file.read()
@@ -113,8 +125,11 @@ def select_file():
 
     if file_contents == '':
         print("Please select file with contents!")
+        mb.showinfo("Result", "Please select file with contents!")
     else:
         mainFunction(file_contents)
+
+
 
 open_button = ttk.Button(
     root,
